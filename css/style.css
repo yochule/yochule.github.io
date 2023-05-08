@@ -1,0 +1,578 @@
+/* --esto lo descrubrí muuuuy a lo último, asiq casi no lo implemente */
+:root{
+    --color-fondo: brown;
+    --color-header: aqua;
+    --color-botones: blue;
+    --color-borde: lightblue;
+    --color-fondo-selector: lightgreen;
+    --color-texto-emergente: beige;
+    --color-sombra-tarjetitas: yellowgreen;
+    --color-fondo-miniaturas: blueviolet;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+    font-size: 1rem;
+}
+
+
+.contenedor-pag{
+    width: 95%;
+    margin: 2% auto;
+    background-color: var(--color-fondo);
+    display: grid;
+    grid-gap: 1%;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(5, auto);
+}
+
+
+
+
+
+
+
+
+/* ordeno los elementos del encabezado */
+.contenedor-pag .encabezado{
+    background-color: var(--color-header);
+    border-radius: 1.5rem;
+    padding: 1%;
+
+    border: 0.5rem var(--color-borde) solid;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/* creo q esto sobre los logos no es necesario, pero gué */
+.logo{
+    display: flex;
+}
+.logo-img{
+    height: 3rem;
+}
+
+/* decoración de los botones para los enlaces */
+.contenedor-pag .encabezado nav a{
+    text-decoration: none;
+    font-weight: bold;
+    color: azure;
+    padding: 0.3rem;
+    border-radius: 1rem;
+    background-color: var(--color-botones);
+}
+/* efecto al pasar por sobre los botones */
+.contenedor-pag .encabezado a:hover{
+    transition: 0.5s;
+    color: black;
+    font-weight: bolder;
+    background-color: var(--color-header);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* 
+.contenedor-pag 
+.principal 
+.selector 
+.contenedor-imagen 
+    .cuadro-imagen
+        .imagen
+    .cuadro-imagen
+        .imagen
+*/
+/* centro el contenedor "principal" */
+.contenedor-pag .principal{
+    background-color: var(--color-fondo-selector);
+    padding: 3%;
+    border-radius: 1.5rem;
+    margin: 0 auto;
+}
+/* centro el texto */
+.contenedor-pag h2{
+    text-align: center;
+}
+
+/* pongo el texto y el cuadro selector arriba y abajo */
+.contenedor-pag .principal .selector{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* ahora pongo las dos imagenes dentro del cuadro selector una al lado de la otra, y le agrego un espacio entre ellas */
+.contenedor-pag .principal .selector .contenedor-imagen{
+    display: flex;
+    gap: 1%;
+    justify-content: center;
+}
+/* divido el contenedor-imagen en dos mitades iguales */
+.contenedor-pag .principal .selector .contenedor-imagen .cuadro-imagen{
+    max-width: 50%;
+}
+/* hago que las imagenes se ajusten a sus respectivos contenedores */
+.contenedor-pag .principal .selector .contenedor-imagen .cuadro-imagen .imagen{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
+
+
+/* ahora voy a hacer q aparezcan los enlaces al pasar sobre las imagenes de seleccion */
+.cuadro-imagen{
+    position: relative;
+    width: 100%;
+}
+.texto-sobreimpreso{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: var(--color-texto-emergente);
+    font-size: 2rem;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+.texto-sobreimpreso:hover{
+    transition: 0.3s;
+    transform: scale(1.2, 1.5);
+    opacity: 1;
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* decorando el "sobre nosotros" */
+.contenedor-pag .sobre{
+    background-color: var(--color-fondo-selector);
+    padding: 3%;
+    border-radius: 1.5rem;
+    margin: 0 auto;
+}
+/* centro el texto */
+.contenedor-pag h3,
+.contenedor-pag p{
+    text-align: center;
+}
+
+
+/* acordion adaptado de https://www.loginradius.com/blog/engineering/css3-accordion/ */
+.accordion{
+    max-width: 100%;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+    border-radius: 1.5rem;
+    overflow: hidden;
+    background-color: var(--color-fondo-miniaturas);
+}
+
+.accordion__label, .accordion__content{
+    padding: 1rem 2rem;
+}
+
+.accordion__label{
+    display: block;
+    color: var(--color-texto-emergente);
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.1s;
+}
+
+.accordion__label:hover{
+    background-color: var(--color-header);
+}
+
+.accordion__content{
+    background: white;
+    /* line-height: 1.6; */
+    /* font-size: 0.85em; */
+    display: none;
+}
+.accordion__content > p{
+    text-align: left;
+}
+.accordion__content .nosotros{
+    font-weight: bold;
+}
+.accordion__content .descripcion{
+    font-style: italic;
+}
+
+.accordion__input{
+    display: none;
+}
+
+.accordion__input:checked ~ .accordion__content{
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------ordenando las tarjetitas ----*/
+.contenedor-pag .miniaturas{
+    background-color: var(--color-fondo-miniaturas);
+    padding: 3%;
+    border-radius: 1.5rem;
+}
+
+/* pongo una grid para ordenar las tarjetas y darle tamaño min */
+.contenedor-tarjetas{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 1rem;
+}
+
+/* ordeno la imagen respecto de la lista con info, dentro de cada tarjeta */
+.tarjeta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 1.5rem;
+    box-shadow: 0 0 3rem var(--color-sombra-tarjetitas);
+}
+.tarjeta img{
+    object-fit: cover;
+    width: 100%;
+    height: 1000%;
+    border-radius: 1.5rem;
+}
+/* escondo la lista con la info */
+.tarjeta ul{
+    display: none;
+}
+
+.contenedor-tarjetas .tarjeta{
+    transition: all 0.25s;
+}
+.contenedor-tarjetas .tarjeta:hover{
+    transform: translateY(-1rem);
+    box-shadow: 0 2rem 2rem var(--color-sombra-tarjetitas);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----fooooter----- */
+.contenedor-pag .pie-pagina{
+    background-color: var(--color-header);
+    border-radius: 1.5rem;
+    padding: 1%;
+    border: 0.5rem var(--color-borde) solid;
+
+    font-size: 1.1rem;
+    color: var(--color-texto-emergente);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* doy vuelta el signo de copyleft */
+.copyleft{
+    font-size: 1.5rem;
+    display: inline-block;
+    transform: rotateY(180deg);
+}
+/* centro los contenedores donde estan los textos */
+.footer-contenedor-nosotros{
+    display: block;
+    justify-content: center;
+ }
+ /* ordeno los iconos de las redes sociales e email */
+.footer-contenedor-redes{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/* ajusto el tamaño del contenedor a los 32px */
+.footer-contenedor-redes > a{
+    height: 32px;
+}
+/* centro com y copyleft */
+.footer-contenedor-nosotros > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------
+|(Lo)            buscar/refus               (Lo) | 
+|------------------------------miniatura ultimos |
+|                |               |       |       |
+|                |               |       |       |
+|    gatx?       |     perrx?    |_______|_______|
+|                |               |       |       |       
+|----------------|---------------|       |       |
+|    resumen quienes somos       |       |       | 
+-------------------------------------------------| 
+|                  pie de pag                    | 
+------------------------------------------------- */
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .contenedor-pag .encabezado{
+        background-color: var(--color-fondo);
+    }
+    .contenedor-pag{
+        display: grid;
+        grid-template-columns: 70% 1fr;
+        grid-template-rows: repeat(4, auto);
+    }
+    .contenedor-pag .encabezado{
+        grid-area: encabezado;
+    }
+    .contenedor-pag .principal{
+        grid-area: principal;
+    }
+    .contenedor-pag .sobre{
+        grid-area: sobre;
+    }
+    .contenedor-pag .miniaturas{
+        grid-area: miniaturas;
+    }
+    .contenedor-pag .pie-pagina{
+        grid-area: pie-pagina;
+    }
+
+    .contenedor-pag{
+        grid-template-areas: "encabezado encabezado"
+                            "principal miniaturas"
+                            "sobre miniaturas"
+                            "pie-pagina pie-pagina";
+    }
+
+    .contenedor-tarjetas{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 1rem;
+    }
+
+
+    .contenedor-pag .pie-pagina{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .footer-contenedor-redes{
+        width: 50%;
+    }
+   
+    
+    .lista-refugios{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1024px){
+    .contenedor-pag .encabezado{
+        background-color: var(--color-fondo-miniaturas);
+    }
+    .contenedor-pag{
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: repeat(4, auto);
+    }
+    .contenedor-pag{
+        grid-template-areas: "encabezado encabezado"
+                            "principal miniaturas"
+                            "sobre miniaturas"
+                            "pie-pagina pie-pagina";
+    }
+    .footer-contenedor-redes{
+        width: 30%;
+    }
+    .footer-contenedor-nosotros{
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .formularioContacto{
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        column-width: 100%;
+    }
+    .formularioContacto fieldset{
+        border: 0.2rem blue solid;
+        width: 45%;
+    }
+    .formularioContacto form{
+        display: flex;
+        flex-direction: row;
+        column-gap: 1rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* -----formulario------- */
+
+.formulario h1{
+    text-align: center;
+}
+.formulario h4{
+    text-align: center;
+}
+.formulario form{
+    margin: 2rem;
+}
+
+.formulario fieldset{
+    border: 0.2rem blue solid;
+}
+.formulario .texto{
+    text-align: center;
+}
+
+textarea{
+    width: 80%;
+    min-height: 5rem;
+}
+
+
+
+
+
+
+.formularioContacto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    column-width: 95%;
+}
+.formularioContacto form{
+    display: flex;
+    flex-direction: column;
+    column-gap: 1rem;
+}
+
+.formularioContacto .campo{
+    text-align: center;
+}
+
+.formularioContacto form{
+    margin: 2rem;
+}
+#formulario{
+    width: 95%;
+}
+
+.formularioContacto fieldset{
+    border: 0.2rem blue solid;
+    /* width: 50%; */
+}
+
+.formularioContacto textarea{
+    width: 100%;
+    min-height: 7rem;
+}
+
+#mensajeValidacion{
+    font-size: small;
+    font-weight: bolder;
+    font-style: italic;
+}

@@ -1,0 +1,75 @@
+1 - mejorar la paleta de colores
+
+2 - modificar/eliminar los bordes
+
+3 - revisar fuentes (me gustan las monoespaciadas)
+    * voy a poner la Fira Code, y de respaldo la familia monoespaciadas
+
+
+4 - que la pag de inicio sea mas tipo:
+
+                    --------------------------------
+                    |(Lo)     buscar/refus     (Lo) |
+                    --------------------------------|
+                    |               |               |
+                    |               |               |
+                    |      Gatx?    |     Perrx?    |
+                    |               |               |          
+                    |               |               |
+                    |-------------------------------|
+                    |      resumen quienes somos    |
+                    |_______________________________|
+                    |-------miniatura ultimos 4-----|
+                    |       |       |       |       |
+                    |       |       |       |       |
+                    ---------------------------------
+                    |           pie de pag          |
+                    --------------------------------
+
+
+                    --------------------------------------------------------
+                    |(Lo)                   buscar/refus               (Lo) |       
+                    |-------------------------------------miniatura ultimos |
+                    |                   |                   |       |       |
+                    |                   |                   |       |       |
+                    |       gatx?       |      perrx?       |_______|_______|
+                    |                   |                   |       |       |                    
+                    |-------------------|-------------------|       |       |
+                    |        resumen quienes somos          |       |       |
+                    --------------------------------------------------------|
+                    |                       pie de pag                      |
+                    ---------------------------------------------------------
+
+
+5 - las fotos de los animales ponerlas todas dentro de img/galeria
+    * hecho
+
+6 - tener una función de busqueda en la galería de gatxs o de perrxs. se muestra por prioridad los matches
+
+
+7 - flex -> encabezado o pie de pagina?
+    * hecho
+
+8 - implementar grid pal resto de la web
+    *hecho
+
+9 - Utilizar al menos un Iframe, íconos de FontAwesome o Flaticon; y fuentes locales o bien de Google Fonts o similar
+    * uso Fira Code (fuente de Google)
+    * uso Iframe cuando pongo la red de refugios
+
+
+10 - tengo un problema en: 
+                .texto-sobreimpreso:hover
+            cuando el cursor se posa sobre la segunda imagen ta todo bien, pero sobre la primera imagen no, porque al parecer aunque el hover es posterior, la segunda imagen se mantiene encima
+            * creo q lo solucioné con el z-index
+
+
+11 - inicio --> dentro de los logos
+    * hecho
+
+
+12 - no me gusta como queda desprolijo teniendo varios ficheros de estilo css. es que un grupo de paginas no comprarten la misma "estructura" que otro grupo de paginas de la web. 
+
+
+
+
